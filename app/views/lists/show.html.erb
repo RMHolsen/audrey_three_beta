@@ -1,0 +1,15 @@
+<h1><%= @list.name %></h1>
+<p><strong>for projects:</strong><br>
+<%= @list.list_with_projects %>
+</p>
+
+<ul>
+<% @items.each do |i| %>
+    <li><p><%= link_to i.name, list_item_path(@list, i) %>, <em><%= i.material %></em></p></li>
+<% end %>
+</ul>
+<br>
+
+<p><%= button_to "Add an Item", new_list_item_path(@list), method: :get %></p><br>
+
+<p><%= button_to "Edit this List", edit_list_path(@list), method: :get %></p>

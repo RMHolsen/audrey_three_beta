@@ -1,0 +1,35 @@
+<h2><%= @project.name %></h2>
+<p><strong>Description:</strong> <%= @project.description %></p>
+<p><strong>Summary or Synopsis:</strong> <%= @project.summary %></p>
+
+<% if !!logged_in? && current_user == @project.user %>
+
+<p><%= button_to "Edit Project", edit_project_path(@project), method: :get %></p> 
+<p><%= button_to "Delete Project", @project, method: :delete, confirm: "Deleting this project will delete all related topics. Continue?" %> </p>
+
+<br><br>
+
+<p><strong>Topics for Research</strong><br>
+<% @project.topics.each do |topic| %>
+    <%= topic.name %> - 
+    <% if !!topic.list %>
+    <%= link_to "Wish List", list_path(topic.list) %><br>
+    <% else %>
+    <%= link_to "Create a wish list for this topic", new_list_path %><br>
+    <% end %>
+<% end %></p>
+
+<br>
+<%= render 'topics/new' %>
+<br>
+
+<% else %>
+
+<% @project.topics.each do |topic| %>
+    <%= topic.name %> - 
+    <% if !!topic.list %>
+    <%= link_to topic.list.name, list_path(topic.list) %><br>
+    <% end %>
+<% end %>
+
+<% end %>

@@ -1,0 +1,42 @@
+
+<%= form_for([@list, @item]) do |f| %>
+
+<% if @item.errors.any? %>
+    <div id="error_explanation">
+      <h4>
+        <%= pluralize(@item.errors.count, "error") %>
+        occurred:
+      </h4>
+   
+      <ul>
+      <% @item.errors.full_messages.each do |msg| %>
+        <li class="error"><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+<p><%= f.label :name %> 
+<%= f.text_field :name %></p>
+<p><%= f.label :material %>
+<%= f.text_field :material %><br>
+<span class="tiny-text">(such as book, CD, episode of TV, film, etc.)</span></p>
+<p><%= f.label :creator %>
+<%= f.text_field :creator %><br>
+<span class="tiny-text">(primary author or editor)</span></p>
+<p><%= f.label :publication_date %>
+<%= f.text_field :publication_date %></p>
+
+<br>
+<p>Add a Source</p>
+<p><%= f.collection_check_boxes(:source_ids, Source.all, :id, :name) do |b| %>
+    <p><%= b.check_box %> <%= b.label %></p>
+<% end %>
+
+<p>New Source <%= f.fields_for :sources, @item.sources.build do |sources_fields| %>
+    <%= sources_fields.text_field :name %>
+<% end %></p>
+
+<br>
+<%= f.submit %>
+<% end %>

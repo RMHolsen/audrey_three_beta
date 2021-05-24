@@ -1,0 +1,5 @@
+<h1>Paywalled Sources</h1>
+
+<% @sources.each do |s| %>
+    <p><%= link_to s.name, source_path(s) %> -- <em><%= s.location %></em></p>
+<% end %>

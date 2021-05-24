@@ -1,0 +1,13 @@
+<h1>Available Sources</h1>
+
+<% @sources.each do |s| %>
+    <p><%= s.name %> -- <em><%= s.location %></em><br>
+    <% if s.fee == true %>
+    <sub>
+    $$$
+    </sub>
+    <% end %>
+    </p>
+<% end %>
+
+<p><%= button_to "Add a Source", new_source_path, method: :get %></p>

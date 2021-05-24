@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+p {
+  font-family: Verdana, sans-serif;
+  font-size: 12pt;
+}
+
+a {
+  text-decoration: none;
+}
+
+ul {
+  list-style-type: none;
+}
+
+h2, h3, h4 {
+  font-family: Verdana, sans-serif;
+}
+
+.menu {
+    margin: 0px 10px 0px 10px;
+    float: left;
+    width: 25%;
+}
+
+.main {
+    margin: 0px 10px 0px 10px;
+    width: 50%;
+    float: left;
+}
+
+.fake-link {
+    color: blue;
+}
+
+.error {
+    color: red;
+    font-weight: bold;
+}
+
+.title {
+  text-align: center;
+}
+
+.tiny-text {
+  font-size: 10pt;
+}
+
+.error {
+  color: red;
+  font-family: Verdana, sans-serif;
+  font-weight: normal;
+}
+</style>
+
+  <title>Research Repository</title>
+  <%= yield :title %>
+</head>
+
+<body>
+<h1 class="title">The Research Repository</h1>
+
+<div class="menu">
+<h3>Public Resources</h3>
+<p class="fake-link">View All Public Projects</p>
+<p><%= link_to "View All Public Lists", public_lists_path %></p>
+<p><%= link_to "View All Sources", sources_path %><br>
+<%= link_to "View Free Sources Only", free_sources_path %><br>
+<%= link_to "View Paywalled Sources Only", paywall_sources_path %></p>
+<p><%= link_to "Add a Source", new_source_path %></p>
+<br>
+
+<% if logged_in? == true %>
+<h3>My Resources</h3>
+<p><%= link_to "View My Projects", projects_path %><br>
+<%= link_to "Create a Project", new_project_path %></p>
+<p><%= link_to "View My Lists", lists_path %><br>
+<%= link_to "Create a List", new_list_path %></p>
+<p><%= link_to "View My Profile", user_path(current_user) %></p>
+<p><%= link_to "Log Out", logout_path %></p>
+<% else %>
+<br>
+<p><%= link_to "Log In", login_path %></p>
+<p><%= link_to "Log In With Github", "/auth/github" %>
+<p><%= link_to "Sign up", signup_path %></p>
+<% end %>
+
+</div>
+
+<div class="main">
+<%= yield %>
+</div>
+</body>
+</html>

@@ -1,0 +1,27 @@
+<%= form_for @source do |f| %>
+    <% if @source.errors.any? %>
+    <div id="error_explanation">
+      <h4>
+        <%= pluralize(@source.errors.count, "error") %>
+        occurred:
+      </h4>
+   
+      <ul>
+      <% @source.errors.full_messages.each do |msg| %>
+        <li class="error"><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+    <% end %>
+    
+    <p><%= f.label :name %>
+    <%= f.text_field :name %></p>
+    <p><%= f.label :location %>
+    <%= f.text_field :location %></p>
+
+    <p><%= f.label "Cost?" %>
+    <%= f.check_box :fee %><br>
+    (Check if there is a fee to access material at this source, or if the source is a store.)</p>
+
+    <%= f.submit %>
+<% end %>

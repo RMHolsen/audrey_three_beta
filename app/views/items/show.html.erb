@@ -1,0 +1,18 @@
+<h2><%= @item.name %></h2>
+<p><strong>By:</strong> <%= @item.creator %></p>
+<p><strong>Type of Resource:</strong> <%= @item.material %></p>
+<p><strong>Publication Date:</strong> <%= @item.publication_date %></p>
+<p><strong>Appears on Wish List:</strong> <%= @item.list.name %></p><br>
+
+<p><strong>Available At:</strong></p>
+<% @sources.each do |s| %>
+    <p><%= s.name %> -- <%= s.location %><br>
+    <% if s.fee == true %>
+    There is a fee.
+    <% end %><br>
+    <strong>Point of Contact:</strong> <%= s.contact %>
+    </p>
+<% end %>
+<br>
+
+<p><%= button_to "Edit This Item", edit_list_item_path(@item.list, @item), method: :get %></p>

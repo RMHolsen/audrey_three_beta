@@ -1,0 +1,13 @@
+<h2>Projects Available</h2>
+
+<% if !!logged_in? %>
+<% @projects.each do |p| %>
+    <ul>
+    <li><p><%= link_to p.name, project_path(p) %></p></li>
+    </ul>
+<% end %>
+<br>
+<p><%= link_to "Create a Project", new_project_path %></p>
+<% else %>
+<p><strong>Eventually projects that are toggled public go here.</strong></p>
+<% end %>

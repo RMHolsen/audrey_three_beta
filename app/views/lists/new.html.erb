@@ -1,0 +1,29 @@
+<%= form_for(@list) do |f| %>
+    <% if @list.errors.any? %>
+    <div id="error_explanation">
+      <h4>
+        <%= pluralize(@list.errors.count, "error") %>
+        occurred:
+      </h4>
+   
+      <ul>
+      <% @list.errors.full_messages.each do |msg| %>
+        <li class="error"><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+    <% end %>
+
+    <p><%= f.label :name %>
+    <%= f.text_field :name %></p>
+    
+    <p>Topics:</p>
+
+    <%= f.collection_check_boxes(:topic_ids, @topics, :id, :name_with_project) do |b| %>
+        <p><%= b.check_box %> <%= b.label %> </p>
+    <% end %>
+    <br>
+
+    <%= f.submit %><br>
+
+<% end %>

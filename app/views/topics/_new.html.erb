@@ -1,0 +1,7 @@
+<%= form_for @topic do |f| %>
+    <p><%= f.label "Add a Topic" %>
+    <%= f.text_field :name %><br>
+    <super class="tiny-text">A sample topic might be "Protagonist's Hometown" or "Cuisines Encountered On The Journey"</super></p>
+    <%= f.hidden_field :project_id, value: @project.id %><br>
+    <%= f.submit %></p>
+<% end %>

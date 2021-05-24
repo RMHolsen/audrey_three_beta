@@ -1,0 +1,24 @@
+<p><%= @source.name %> -- <%= @source.location %><br>
+<sub>
+<% if !!@source.fee %>
+This is a paid source.
+<% end %>
+</sub>
+</p>
+
+<p><strong>Hours:</strong>
+<% if !!@source.hours %>
+<%= @source.hours %>
+<% else %>
+Unknown
+<% end %></p>
+
+<% if !!@source.description %>
+<p><%= @source.description %></p>
+<% else %>
+<p>Please add a description for this source. A good description may include range of resources, pricing scale, accessibility, and 
+whether or not items can be ordered in.</p>
+<% end %>
+
+
+<%= button_to "Edit This Source", edit_source_path(@source), method: :get %>

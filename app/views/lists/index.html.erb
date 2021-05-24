@@ -1,0 +1,5 @@
+<% @lists.uniq.each do |list| %>
+    <ul>
+    <li><p><%= link_to list.name, list_path(list) %> -- <%= list.items.count %> items</p></li>
+    </ul>
+<% end %>

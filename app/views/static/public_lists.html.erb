@@ -1,0 +1,12 @@
+<% if @lists != [] %>
+<% @lists.each do |list| %>
+    <ul>
+    <li><p><%= link_to list.name, list_path(list) %> -- <%= list.items.count %> items</p></li>
+    </ul>
+<% end %>
+ 
+<% else %>
+
+<h1>There are no public lists to display.</h1>
+
+<% end %>
