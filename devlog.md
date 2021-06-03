@@ -114,3 +114,6 @@ Added errors fields w/customized styling
 Cosmetic edits to Item new, show views, User show view, Lists index, show view
 Locked edit profile button behind logged_in? conditional
 Attempted to limit topics field on List new/edit views to open topics only, failed
+
+## 3 June 2021
+After some considerable debugging, set up Omniauth. 

@@ -4,7 +4,7 @@ source 'https://rubygems.org'
 #ruby '2.6.1'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails', '~>5.0.7.2'
+gem 'rails', '~>5.2.3'
 # Use sqlite3 as the database for Active Record
 gem 'sqlite3', '~>1.3.6'
 # Use Puma as the app server
@@ -28,6 +28,9 @@ gem 'jbuilder', '~> 2.5'
 # bundle exec rake doc:rails generates the API under doc/api.
 gem 'sdoc', '~> 0.4.0', group: :doc
 
+# Omniauth, ugh
+gem 'omniauth-github'
+
 ### IDEFK 
 #May need to solve the active_storage problem
 # NoMethodError: undefined method `active_storage' for #<Rails::Application::Configuration:0x000055b2524880a0>
@@ -40,7 +43,7 @@ gem 'sdoc', '~> 0.4.0', group: :doc
   # Store uploaded files on the local file system (see config/storage.yml for options)
   # config.active_storage.service = :local
 
-#gem 'activestorage', '~> 5.2', '>= 5.2.1'
+#gem 'activestorage'
 
 ### IDEFK 
 

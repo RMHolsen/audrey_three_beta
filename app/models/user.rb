@@ -14,19 +14,4 @@ class User < ActiveRecord::Base
         #MO MORE VALIDATION ERRORS FOR ME DAMMIT.
     end 
 
-    #def self.find_or_create_by_omniauth(auth_hash)
-    #NEW HOTNESS
-        #self.where(email: auth_hash["info"]["email"]).first_or_create do |user|
-            #user.password = SecureRandom.hex
-        #end
-
-    #OLD AND BUSTED
-    #oauth_email = auth_hash["info"]["email"]
-        #if user = User.find_by(email: oauth_email)
-            #user 
-        #else 
-            #user = User.create(email: oauth_email, password: SecureRandom.hex)
-        #end
-         
-    #end 
 end 
