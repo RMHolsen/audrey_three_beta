@@ -141,3 +141,5 @@ oauth2 (1.4.7)
     omniauth-oauth2 (1.7.1)
       oauth2 (~> 1.4)
       omniauth (>= 1.9, < 3)
+      
+Debugged Login via Omniauth path a bit

@@ -11,10 +11,9 @@ class SessionsController < ApplicationController
     def create
         if auth 
         # If there's an auth hash it's an omniauth login
-            byebug 
             @user = User.find_by(email: auth['info']['email']) do |u|
                 u.password = SecureRandom.hex(12)
-            end 
+            end     
             if @user 
                 @user.email = auth['info']['email']
                 @user.username = @user.email_username
@@ -23,7 +22,7 @@ class SessionsController < ApplicationController
                 session[:user_id] = @user.id 
                 redirect_to @user 
             else 
-                redirect to root_path
+                redirect_to root_path
             end 
         else 
         # Use the regular login type thing. 
