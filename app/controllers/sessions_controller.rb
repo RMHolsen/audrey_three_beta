@@ -1,29 +1,31 @@
 class SessionsController < ApplicationController
 
-    def new 
-        @user = User.new 
-        render :login 
-    #     #Start a new user object, render the session view 'login'
-    #     #Wait, starting a new user object should be in the users controller. Shouldn't it?
-    #     #Maybe not, since we need to render the view... ugh, I'm confused.
-    end 
+    # def new 
+    #     @user = User.new 
+    #     render :login 
+    # end 
+    # Not sure I need this but it's staying there till I know if I do or not
+
+    # COULD USE SOME REFACTORING 
 
     def create
-        #if auth_hash == request.env["omniauth.auth"]
-        #Then we know they are logging in via OAuth
-        #oauth_email = request.env["omniauth.auth"]["info"]["email"]
-        #Grab the email from the authorization hash
-
-            #if user = User.find_by(email: oauth_email) (username: params[:user][:email])
-                #session[:user_id] = user.id
-            #else 
-                #user = User.create(email: oauth_email, password: SecureRandom.hex)
-                #session[:user_id] = user.id
-            #end 
-        
-        #else
-        #normal login flow
-
+        if auth 
+        # If there's an auth hash it's an omniauth login
+            @user = User.find_by(email: auth['info']['email']) do |u|
+                u.password = SecureRandom.hex(12)
+            end 
+            if @user 
+                @user.email = auth['info']['email']
+                @user.username = @user.email_username
+                @user.save 
+                # Slightly complicated getting around validations requiring a username here
+                session[:user_id] = @user.id 
+                redirect_to @user 
+            else 
+                redirect to root_path
+            end 
+        else 
+        # Use the regular login type thing. 
             @user = User.find_by(username: params[:user][:username])
             if @user && @user.authenticate(params[:user][:password])
                 session[:user_id] = @user.id 
@@ -33,8 +35,7 @@ class SessionsController < ApplicationController
                 #Redirecting is acceptable here for security protocol purposes
                 #Flash error message goes here
             end 
-
-        #end
+        end 
     end 
 
     def destroy
@@ -44,4 +45,8 @@ class SessionsController < ApplicationController
 
     private 
 
+    def auth 
+        request.env["omniauth.auth"]
+        # Returns a hash of omniauth data
+    end 
 end 
