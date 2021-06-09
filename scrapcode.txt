@@ -1,0 +1,5 @@
+<%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+
+removed from assets/javascripts/application.js
+//= require rails-ujs
+//= require activestorage

@@ -29,10 +29,8 @@ An ItemSource belongs_to an item and belongs_to a source.
 DO NOT do anything with the public boolean just yet, eventually there will be a method that detects whether it's false or true and sets everything to visible or requires auth to see but right now just leave it at false and wait for the verification section before doing anything with it. 
 
 ## GITHUB
-
 App ID: 116348
-
-Client ID: Iv1.b02ea53854766c89
+Client ID: Iv1.b02ea53854766c89 <-- need the client ID
 
 ## Requirements
 Use the Ruby on Rails framework. YES

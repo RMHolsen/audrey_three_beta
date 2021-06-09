@@ -11,6 +11,7 @@ class SessionsController < ApplicationController
     def create
         if auth 
         # If there's an auth hash it's an omniauth login
+            byebug 
             @user = User.find_by(email: auth['info']['email']) do |u|
                 u.password = SecureRandom.hex(12)
             end 
