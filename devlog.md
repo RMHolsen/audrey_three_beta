@@ -143,3 +143,8 @@ oauth2 (1.4.7)
       omniauth (>= 1.9, < 3)
       
 Debugged Login via Omniauth path a bit
+
+## 10 June 2021
+Restructured the logic path for Omniauth login to create a user if user not found, with a username based on the email_username method
+Debugged the profile page (somehow the erb if structure doesn't accept "if @variable" or "if !!@variable")
+Debugged the login method (it's redirect_to root_path, not redirect_to root)

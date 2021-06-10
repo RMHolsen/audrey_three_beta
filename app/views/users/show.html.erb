@@ -1,8 +1,9 @@
-<% if @user.display_name %>
+<% if @user.display_name == true %>
 <h1><%= @user.display_name %>'s Profile</h1>
 <% else %>
 <h1><%= @user.username %>'s Profile</h1>
 <% end %>
+
 <p>This user has <%= pluralize(@user.projects.count, "project") %>.</p>
 
 <p><%= @user.profile %></p><br>
