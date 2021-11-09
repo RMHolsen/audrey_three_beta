@@ -1,0 +1,7 @@
+<h1> This is a basic information page on how to use the Research Repository</h1>
+
+<% if logged_in? %>
+<h1> Hello, <%= @user.display_name %>!</h1>
+<% else %>
+<h1> Hello, welcome to the Research Repository!</h1>
+<% end %>

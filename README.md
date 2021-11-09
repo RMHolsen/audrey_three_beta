@@ -1,24 +1,7 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+This project is a Ruby on Rails app for the Ruby on Rails project, the third project for Flatiron School Boot Camp. This project is not yet ready for deployment, although eventually it may be. Given that there is often a need to collect disparate resources for various projects (here the primary use is fictional writing but there are other projects and other uses) this may become an open source web application for use in such settings as require research to complete an assignment or project. 
 
-Things you may want to cover:
+The task flow in its current iteration is such that a user must log in either via GitHub or by username and password, and once in they can either create a project or react a list and attach it to a project via a topic. Multiple lists may be attached to a single project, and vice versa. The topic should, for clarity's sake, be specifically referential to an aspect of the project so as to indicate what the research is for (other than simply falling down a rabbit hole) but the list title and description can be anything. Thus, a single list can have multiple uses for multiple projects within each specific context as described by the topic. Within each list the items are nested, and each item has a source. The source has a number of attributes to help a person locate the material as well as being publicly available to help a person find other potential sources for their own research needs. The sources are also separated into groups by whether they are free or available behind a paywall or for purchase.
 
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+Future plans and developments are visible in the project notes.

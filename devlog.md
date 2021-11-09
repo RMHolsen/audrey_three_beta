@@ -153,3 +153,6 @@ Debugged the login method (it's redirect_to root_path, not redirect_to root)
 Few last little improvements/bugs discovered: added link to source show page from source index per source
 Fixed display_name/username bug on User show page by adding a helper method
 
+## 9 November 2021
+Merged clean-branch-for-omniauth with main, keeping clean-branch... for future safety against bugs purposes
+Filled out ReadMe
