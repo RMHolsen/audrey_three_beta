@@ -33,12 +33,11 @@ post '/login', to: 'sessions#create'
 get '/logout', to: 'sessions#destroy'
 # Creating and destroying sessions
 
-
 root 'static#index'
 get '/public_lists', to: 'static#public_lists', as: "public_lists"
 # Preliminary landing page for public lists
 
-#Omniauth code
+#Omniauth Github
 get '/auth/github/callback', to: "sessions#create"
 #Once github authenticates the user this is where we want the user to land, at creating a new session
 end

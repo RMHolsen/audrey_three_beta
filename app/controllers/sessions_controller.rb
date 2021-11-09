@@ -1,11 +1,14 @@
 class SessionsController < ApplicationController
 
+
     def new 
         @user = User.new 
         render :login 
     end 
     # Not sure I need this but it's staying there till I know if I do or not
     # YES YOU DO LEAVE IT IN
+    # COULD USE SOME REFACTORING 
+
 
     def create
         if auth 
