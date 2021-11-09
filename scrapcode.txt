@@ -1,0 +1,25 @@
+<%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+
+removed from assets/javascripts/application.js
+//= require rails-ujs
+//= require activestorage
+
+## User login method
+ @user = User.find_or_create_by(email: auth['info']['email']) do |u|
+                u.password = SecureRandom.hex(12)
+                u.username = u.email_username
+            end     
+            if !@user 
+                @user = User.new(email: auth['info']['email'], password: SecureRandom.hex(12))
+                @user.username = @user.email_username
+                @user.save 
+                # Slightly complicated getting around validations requiring a username here
+                session[:user_id] = @user.id 
+                redirect_to @user 
+            elsif @user 
+                sessions[:user_id] = @user.id 
+                redirect_to @user 
+            else 
+                redirect_to root_path
+                # Error message about email settings on GitHub
+            end 

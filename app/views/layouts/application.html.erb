@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
+<%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
 <style>
 p {
   font-family: Verdana, sans-serif;
@@ -83,7 +84,7 @@ h2, h3, h4 {
 <% else %>
 <br>
 <p><%= link_to "Log In", login_path %></p>
-<p><%= link_to "Log In With Github", "/auth/github" %></p>
+<p><%= link_to "Log In With Github", "/auth/github", method: :post %></p>
 <p><%= link_to "Sign up", signup_path %></p>
 <% end %>
 

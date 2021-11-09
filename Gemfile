@@ -43,9 +43,16 @@ gem 'omniauth-github'
   # Store uploaded files on the local file system (see config/storage.yml for options)
   # config.active_storage.service = :local
 
-#gem 'activestorage'
+#gem 'activestorage' ;~> 5.2', '>= 5.2.1'
+gem 'rails-ujs', '~> 5.1.0.beta1'
 
 ### IDEFK 
+
+#Omniauth
+gem 'omniauth', '1.9.1'
+gem 'omniauth-github'
+gem 'dotenv-rails'
+# gem 'omniauth-rails_csrf_protection'
 
 # Use ActiveStorage variant
  gem 'mini_magick', '~> 4.8'

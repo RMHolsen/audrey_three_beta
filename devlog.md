@@ -115,5 +115,41 @@ Cosmetic edits to Item new, show views, User show view, Lists index, show view
 Locked edit profile button behind logged_in? conditional
 Attempted to limit topics field on List new/edit views to open topics only, failed
 
-## 3 June 2021
-After some considerable debugging, set up Omniauth. 
+## 9 June 2021
+ON CLEAN BRANCH
+Went through an hour or so of debugging omniauth with Dustin and Jessica; got Omniauth mostly probably working: 
+BUG NOTES: First, need: <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %> to make sure Omniauth gems can direct everything to the right path. Then, app/assets/javascripts/application.js deleted //= require activestorage to remove gem incompatibilities, then updated the Gemfile to: 
+
+gem 'omniauth', '1.9.1'
+gem 'omniauth-github'
+gem 'dotenv-rails'
+and commented out gem 'omniauth-rails_csrf_protection'
+
+Gemfile lock should appear
+oauth2 (1.4.7)
+      faraday (>= 0.8, < 2.0)
+      jwt (>= 1.0, < 3.0)
+      multi_json (~> 1.3)
+      multi_xml (~> 0.5)
+      rack (>= 1.2, < 3)
+    omniauth (1.9.1)
+      hashie (>= 3.4.6)
+      rack (>= 1.6.2, < 3)
+    omniauth-github (1.4.0)
+      omniauth (~> 1.5)
+      omniauth-oauth2 (>= 1.4.0, < 2.0)
+    omniauth-oauth2 (1.7.1)
+      oauth2 (~> 1.4)
+      omniauth (>= 1.9, < 3)
+      
+Debugged Login via Omniauth path a bit
+
+## 10 June 2021
+Restructured the logic path for Omniauth login to create a user if user not found, with a username based on the email_username method
+Debugged the profile page (somehow the erb if structure doesn't accept "if @variable" or "if !!@variable")
+Debugged the login method (it's redirect_to root_path, not redirect_to root)
+
+## 17 June 2021
+Few last little improvements/bugs discovered: added link to source show page from source index per source
+Fixed display_name/username bug on User show page by adding a helper method
+
