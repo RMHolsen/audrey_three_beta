@@ -159,3 +159,5 @@ Filled out ReadMe
 
 ## 28 December 2021
 After some intermittent frustration at the Erubi bug still happening... fixed the bug on main. (See project notes)
+Also cleared another minor bug about not finding user.id=1; turns out you really do need to type "rails db:migrate RAILS_ENV=development" and not "rails db:migrate"
+Will study further the difference between the two.
