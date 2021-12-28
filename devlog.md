@@ -156,3 +156,6 @@ Fixed display_name/username bug on User show page by adding a helper method
 ## 9 November 2021
 Merged clean-branch-for-omniauth with main, keeping clean-branch... for future safety against bugs purposes
 Filled out ReadMe
+
+## 28 December 2021
+After some intermittent frustration at the Erubi bug still happening... fixed the bug on main. (See project notes)

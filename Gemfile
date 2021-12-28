@@ -4,7 +4,7 @@ source 'https://rubygems.org'
 #ruby '2.6.1'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails'
+gem 'rails', '~>5.0.7.2'
 # Use sqlite3 as the database for Active Record
 gem 'sqlite3', '~>1.3.6'
 # Use Puma as the app server
@@ -27,9 +27,6 @@ gem 'jbuilder', '~> 2.5'
  gem 'bcrypt', '~> 3.1.7'
 # bundle exec rake doc:rails generates the API under doc/api.
 gem 'sdoc', '~> 0.4.0', group: :doc
-
-# Omniauth, ugh
-gem 'omniauth-github'
 
 ### IDEFK 
 #May need to solve the active_storage problem

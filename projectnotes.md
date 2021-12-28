@@ -56,7 +56,7 @@ Use the Ruby on Rails framework. YES
 ## BUG HUNT
 -- why the goddamn hell am I getting a leading "" in the topic_ids array when I make or edit a list? Does it have something to do with the way I used a collection_check_boxes object instead? What the fuck is going onnnnnn.
 -- confirmation message for project delete method isn't working. keep googling.
-
+-- ERUBI BUG: So basically I thought I had merged the clean omniauth branch that was working into main, and for the most part I had. BUT I hadn't specified a version of Rails in the Gemfile, specifically the one I'd built everything off of, so it was going with the most up-to-date version of Ruby/Rails. This wasn't obvious from the error message but when I ran a Rails server it kicked up some compatibility errors and the clue was in the fact that it was looking for versions compatible with Ruby 6.0.whatever. Deleted an extra omniauth gem call in the Gemfile, specified the version of Ruby, Fanny's your aunt and Bob's your uncle. 
 
 ## ROUTES 
 So I don't have to keep doing rails routes rails routes rails routes
