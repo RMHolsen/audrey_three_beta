@@ -36,6 +36,9 @@ get '/logout', to: 'sessions#destroy'
 root 'static#index'
 get '/public_lists', to: 'static#public_lists', as: "public_lists"
 # Preliminary landing page for public lists
+get '/welcome_info', to: 'static#info', as: 'welcome_info'
+# Landing page for info for new users
+
 
 #Omniauth Github
 get '/auth/github/callback', to: "sessions#create"

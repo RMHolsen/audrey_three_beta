@@ -10,8 +10,9 @@ before_action :set_user, only: [:show, :edit, :update]
         if @user.valid?
             @user.save  
             session[:user_id] = @user.id 
-            redirect_to @user 
-            #Change this to redirect to welcome_path which would be a static page with instructions
+            #redirect_to @user 
+            # Change this to redirect to welcome_path which would be a static page with instructions
+            redirect_to welcome_info
         else 
             render :new 
         end

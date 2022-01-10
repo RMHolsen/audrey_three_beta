@@ -145,12 +145,15 @@ oauth2 (1.4.7)
 Debugged Login via Omniauth path a bit
 
 ## 10 June 2021
-Restructured the logic path for Omniauth login to create a user if user not found, with a username based on the email_username method
-Debugged the profile page (somehow the erb if structure doesn't accept "if @variable" or "if !!@variable")
+Restructured the logic path for Omniauth login to create a user if user not found, 
+  with a username based on the email_username method
+Debugged the profile page (somehow the erb if structure doesn't accept 
+  "if @variable" or "if !!@variable")
 Debugged the login method (it's redirect_to root_path, not redirect_to root)
 
 ## 17 June 2021
-Few last little improvements/bugs discovered: added link to source show page from source index per source
+Few last little improvements/bugs discovered: added link to source show page from 
+  source index per source
 Fixed display_name/username bug on User show page by adding a helper method
 
 ## 9 November 2021
@@ -161,3 +164,9 @@ Filled out ReadMe
 After some intermittent frustration at the Erubi bug still happening... fixed the bug on main. (See project notes)
 Also cleared another minor bug about not finding user.id=1; turns out you really do need to type "rails db:migrate RAILS_ENV=development" and not "rails db:migrate"
 Will study further the difference between the two.
+
+## 9 January 2021
+Set up the route for a welcome info page (static/info.html.erb)
+Set up redirect in Users Conteroller for welcome info page
+Did not write the welcome info page, that's for when I'm not down with a virus
+Did not test the welcome info page, that's for... etc. But this is a simple thing on the to-do list I can clear now.
