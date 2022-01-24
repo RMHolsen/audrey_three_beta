@@ -1,6 +1,6 @@
 ## To-Do
 -- ~~Add welcome path to new user creation with a set of instructions~~
--- Double check where info link is located/add info link somewhere
+-- ~~Double check where info link is located/add info link somewhere~~ wasn't in there, put it into the side bar; probably should be restructured but ... ergh. Reformatting everything.
 -- Remap projects-topics-lists associations with an eye to lists with multiple topics
 -- Add delete methods to everything that needs them
 -- Double checked logged_in? lock on edit and delete methods.
