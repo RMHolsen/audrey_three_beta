@@ -1,5 +1,6 @@
 ## To-Do
--- Add welcome path to new user creation with a set of instructions 
+-- ~~Add welcome path to new user creation with a set of instructions~~
+-- Double check where info link is located/add info link somewhere
 -- Remap projects-topics-lists associations with an eye to lists with multiple topics
 -- Add delete methods to everything that needs them
 -- Double checked logged_in? lock on edit and delete methods.
@@ -14,6 +15,7 @@
 -- Add location and fee fields to Add a Source on item page? Or redirect if a source has been added to the sources page to suggest editing the source
 This will require some considerable research into how to juggle all those params into a new thing. It shouldn't be too complex but try it anyway.
 -- Change the topic assignment on list edit view to a radio button (adding on extra topics to a list isn't working right now, figure out that structure later)
+-- Add URL to Source? to Item? Possibly to Item, in which case maybe we want more than one URL.
 
 ## Associations
 A User has_many projects

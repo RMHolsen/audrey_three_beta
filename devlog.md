@@ -165,8 +165,11 @@ After some intermittent frustration at the Erubi bug still happening... fixed th
 Also cleared another minor bug about not finding user.id=1; turns out you really do need to type "rails db:migrate RAILS_ENV=development" and not "rails db:migrate"
 Will study further the difference between the two.
 
-## 9 January 2021
+## 9 January 2022
 Set up the route for a welcome info page (static/info.html.erb)
 Set up redirect in Users Conteroller for welcome info page
 Did not write the welcome info page, that's for when I'm not down with a virus
 Did not test the welcome info page, that's for... etc. But this is a simple thing on the to-do list I can clear now.
+
+## 23 January 2022
+Wrote some copy for the welcome info page
